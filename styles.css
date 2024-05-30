@@ -1,0 +1,101 @@
+/* Estilos generales */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Evita el desplazamiento vertical */
+    background: linear-gradient(135deg, #a3daff, #ffffff); /* Degradado de tonos */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Estilos para el encabezado */
+/* Estilos para el título */
+h1 {
+    text-align: center;
+    color: #fff; /* Blanco */
+    margin-top: 40px; /* Espacio adicional en la parte superior */
+    font-size: 36px; /* Tamaño del texto */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra suave */
+    letter-spacing: 2px; /* Espaciado entre letras */
+    padding: 20px; /* Espaciado interno */
+    background: linear-gradient(135deg, #2980b9, #2c3e50); /* Degradado de tonos para el fondo */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+
+/* Estilos para el formulario */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas y los inputs del formulario */
+form label, form input {
+    font-size: 16px;
+}
+
+form input {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd; /* Borde gris */
+    background-color: rgba(255, 255, 255, 0.8); /* Blanco con transparencia */
+}
+
+/* Estilos para el botón de búsqueda */
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff; /* Azul */
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3; /* Azul más oscuro */
+}
+
+/* Estilos para la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff; /* Blanco */
+    color: #333; /* Texto negro */
+    border-radius: 10px; /* Borde redondeado */
+    overflow: hidden; /* Ocultar desbordamiento */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+
+/* Estilos para las celdas de la tabla */
+th, td {
+    border: 1px solid #ddd; /* Borde gris */
+    padding: 12px;
+    text-align: left;
+}
+/* Estilos para el encabezado de la tabla */
+th {
+    background-color: #007bff; /* Azul */
+    color: white;
+}
+
+/* Estilos para las filas pares de la tabla */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* Gris claro */
+}
+
+/* Estilos para las filas resaltadas al pasar el mouse */
+tr:hover {
+    background-color: #e9eeff; 
+}
+
+/* Clase para ocultar elementos */
+.hidden {
+    display: none;
+}

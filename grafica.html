@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Tarifas</title>
+    <!-- Incluye la biblioteca Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Enlaza el archivo CSS para el estilo -->
+    <link rel="stylesheet" href="stylesgrafica.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gráfico de Tarifas</h1>
+        <h2>Numero de tarifas usadas por todos los Clientes</h2>
+        <div class="chart-container">
+            <!-- Agrega un lienzo donde se mostrará el gráfico -->
+            <canvas id="myChart"></canvas>
+        </div>
+    </div>
+
+    <script>
+        // Obtener los datos de las tarifas desde la API
+        fetch('http://192.168.101.4:3000/asesoria_energetica')
+            .then(response => response.json())
+            .then(data => {
+                // Filtrar los datos para obtener solo los que estén rellenos
+                const filteredData = data.filter(item => {
+                    return item.TARIFA.trim() !== ''; // Filtrar solo las tarifas que no estén vacías
+                });
+
+                // Obtener las tarifas únicas
+                const tarifas = [...new Set(filteredData.map(item => item.TARIFA))];
+
+                // Datos para el gráfico
+                const chartData = {
+                    labels: tarifas,
+                    datasets: [{
+                        label: 'Tarifas',
+                        data: tarifas.map(tarifa => filteredData.filter(item => item.TARIFA === tarifa).length),
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ], // Color de fondo de las áreas
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ], // Color del borde de las áreas
+                        borderWidth: 1
+                    }]
+                };
+
+                // Configuración del gráfico
+                const chartConfig = {
+                    type: 'doughnut', // Tipo de gráfico (en este caso, de rosca)
+                    data: chartData,
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true // Empezar desde cero en el eje Y
+                            }
+                        }
+                    }
+                };
+
+                // Crear la instancia del gráfico
+                const myChart = new Chart(
+                    document.getElementById('myChart'),
+                    chartConfig
+                );
+            })
+            .catch(error => console.error('Error al obtener los datos:', error));
+    </script>
+</body>
+</html>

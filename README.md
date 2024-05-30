@@ -21,14 +21,6 @@ Estilo y Diseño
 El diseño de la interfaz se ha desarrollado con un enfoque en la usabilidad y la estética. Se han aplicado estilos CSS personalizados para mejorar la apariencia y la experiencia del usuario. Además, se han utilizado colores contrastantes y elementos visuales como sombras y bordes redondeados para mejorar la legibilidad y la estética.
 Contribución
 
-Si deseas contribuir a este proyecto, sigue estos pasos:
-
-    Haz un fork del repositorio.
-    Crea una rama para tu nueva funcionalidad (git checkout -b feature/nueva-funcionalidad).
-    Haz tus cambios y realiza commit (git commit -am 'Agrega nueva funcionalidad').
-    Haz push a la rama (git push origin feature/nueva-funcionalidad).
-    Crea un nuevo Pull Request.
-
 Usos Habituales
 
     Consultar Datos Energéticos: Los usuarios pueden utilizar la plataforma para acceder y consultar datos relacionados con la asesoría energética, como el consumo de energía, tarifas, estado de contratos, entre otros.
